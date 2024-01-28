@@ -1,0 +1,17 @@
+"""
+:type nums: List[int]
+:type target: int
+:rtype: List[int]
+"""
+
+
+# important thing to note that using inbuilt functions such as dict.keys
+# also impacts the time complexity in python
+class Solution(object):
+    def twoSum(self, nums, target):
+        output = {}  # value:index
+        for i in range(len(nums)):
+            if (target - nums[i]) in output:
+                return [i, output[target - nums[i]]]
+            else:
+                output[nums[i]] = i
