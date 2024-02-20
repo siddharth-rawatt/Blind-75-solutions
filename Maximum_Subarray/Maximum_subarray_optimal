@@ -1,0 +1,13 @@
+class Solution(object):
+    def maxSubArray(self, nums):
+        # Assuming nums is not empty, maxi starts with the first element
+        maxi = nums[0]
+        currsum = 0
+        for i in nums:
+            # Reset currsum to 0 if it becomes negative
+            if currsum < 0:
+                currsum = 0
+            currsum += i
+            # Update maxi if currsum is greater than maxi
+            maxi = max(maxi, currsum)
+        return maxi

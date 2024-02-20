@@ -1,0 +1,14 @@
+class Solution(object):
+    def maxSubArray(self, nums):
+        maxi = nums[0]
+        for i in range(len(nums) + 1):
+            currsum = 0
+            for j in range(i, len(nums)):
+                currsum += nums[j]
+                if currsum >= maxi:
+                    maxi = currsum
+        return maxi
+        """
+        :type nums: List[int]
+        :rtype: int
+        """
